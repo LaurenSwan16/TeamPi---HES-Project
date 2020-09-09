@@ -207,4 +207,5 @@ BEGIN
   alter table dirty.hesapc
   drop column speldur
   alter table dirty.hesapc
+  drop column spelend
 END
