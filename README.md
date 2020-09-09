@@ -60,15 +60,16 @@ When adding new data to this database first upload data to dirty.HESAPC
 Run Stored proc:
 					[SP_Insert_into_HESAPC](https://github.com/LaurenSwan16/TeamPi---HES-Project/blob/master/SP%20for%20incremental%20loading%20of%20staged%20data.sql) 
 
-	- This uploads all new data into the staging area. 
+- This uploads all new data into the staging area. 
 
 ## Updating the dimensions and fact table 
-		Run the overall proc
+
+Run the overall proc
 						[SP_fact_insert](https://github.com/LaurenSwan16/TeamPi---HES-Project/blob/master/SP_fact_insert.sql)
 
-	This completes the following: 
+This completes the following: 
 
-       Runs the following stored procs to update dimensions ([see code here](https://github.com/LaurenSwan16/TeamPi---HES-Project/blob/master/SP%20for%20updating%20ALL%20dimensions.sql)):  
+Runs the following stored procs to update dimensions ([see code here](https://github.com/LaurenSwan16/TeamPi---HES-Project/blob/master/SP%20for%20updating%20ALL%20dimensions.sql)):  
        -- These dimensions have been determined as SCD type 2, as opposed to others which are fixed.
 							SP_dimsex_update
 							SP_dimpractice_update
@@ -77,4 +78,4 @@ Run Stored proc:
 							SP_dimdiagnosis_update
 							SP_dimAdmiSorc_update
 
-			Runs stored proc to update fact table from these dimensions
+Runs stored proc to update fact table from these dimensions
