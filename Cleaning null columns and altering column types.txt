@@ -1,207 +1,210 @@
 --Changing datetime2 to date
-alter table dirty.hesapc
-alter column epiend date
-alter table dirty.hesapc
-alter column epistart date
-alter table dirty.hesapc
-alter column dob date
-alter table dirty.hesapc
-alter column admidate date
-alter table dirty.hesapc
-alter column elecdate date
---dropping null columns
-alter table dirty.hesapc
-drop  column opdate_05
-alter table dirty.hesapc
-drop column provspno
-alter table dirty.hesapc
-drop column admiflag
-alter table dirty.hesapc
-drop column disflag
-alter table dirty.hesapc
-drop column postdist
-alter table dirty.hesapc
-drop column pseudo_hesid
-alter table dirty.hesapc
-drop column startage_calc
-alter table dirty.hesapc
-drop column consult
-alter table dirty.hesapc
-drop column pconsult
-alter table dirty.hesapc
-drop column preferrer
-alter table dirty.hesapc
-drop column preggmp
-alter table dirty.hesapc
-drop column referorg
-alter table dirty.hesapc
-drop column referrer
-alter table dirty.hesapc
-drop column reggmp
-alter table dirty.hesapc
-drop column fceflag
-alter table dirty.hesapc
-drop column elecdurd
-alter table dirty.hesapc
-drop column firstreg
-alter table dirty.hesapc
-drop column cause
-alter table dirty.hesapc
-drop column diag_02
-alter table dirty.hesapc
-drop column diag_03
-alter table dirty.hesapc
-drop column diag_04
-alter table dirty.hesapc
-drop column diag_05
-alter table dirty.hesapc
-drop column diag_06
-alter table dirty.hesapc
-drop column diag_07
-alter table dirty.hesapc
-drop column diag_08
-alter table dirty.hesapc
-drop column diag_09
-alter table dirty.hesapc
-drop column diag_10
-alter table dirty.hesapc
-drop column diag_11
-alter table dirty.hesapc
-drop column diag_12
-alter table dirty.hesapc
-drop column diag_13
-alter table dirty.hesapc
-drop column diag_14
-alter table dirty.hesapc
-drop column diag_15
-alter table dirty.hesapc
-drop column diag_16
-alter table dirty.hesapc
-drop column diag_17
-alter table dirty.hesapc
-drop column diag_18
-alter table dirty.hesapc
-drop column diag_19
-alter table dirty.hesapc
-drop column diag_20
-alter table dirty.hesapc
-drop column opertn_01
-alter table dirty.hesapc
-drop column opertn_02
-alter table dirty.hesapc
-drop column opertn_03
-alter table dirty.hesapc
-drop column opertn_04
-alter table dirty.hesapc
-drop column opertn_05
-alter table dirty.hesapc
-drop column opertn_06
-alter table dirty.hesapc
-drop column opertn_07
-alter table dirty.hesapc
-drop column opertn_08
-alter table dirty.hesapc
-drop column opertn_09
-alter table dirty.hesapc
-drop column opertn_10
-alter table dirty.hesapc
-drop column opertn_11
-alter table dirty.hesapc
-drop column opertn_12
-alter table dirty.hesapc
-drop column opertn_13
-alter table dirty.hesapc
-drop column opertn_14
-alter table dirty.hesapc
-drop column opertn_15
-alter table dirty.hesapc
-drop column opertn_16
-alter table dirty.hesapc
-drop column opertn_17
-alter table dirty.hesapc
-drop column opertn_19
-alter table dirty.hesapc
-drop column opertn_20
-alter table dirty.hesapc
-drop column opertn_21
-alter table dirty.hesapc
-drop column opertn_22
-alter table dirty.hesapc
-drop column opertn_23
-alter table dirty.hesapc
-drop column opertn_24
-alter table dirty.hesapc
-drop column opdate_01
-alter table dirty.hesapc
-drop column opdate_02
-alter table dirty.hesapc
-drop column opdate_03
-alter table dirty.hesapc
-drop column opdate_04
-alter table dirty.hesapc
-drop column opdate_06
-alter table dirty.hesapc
-drop column opdate_07
-alter table dirty.hesapc
-drop column opdate_08
-alter table dirty.hesapc
-drop column opdate_09
-alter table dirty.hesapc
-drop column opdate_10
-alter table dirty.hesapc
-drop column opdate_11
-alter table dirty.hesapc
-drop column opdate_12
-alter table dirty.hesapc
-drop column opdate_13
-alter table dirty.hesapc
-drop column opdate_14
-alter table dirty.hesapc
-drop column opdate_15
-alter table dirty.hesapc
-drop column opdate_16
-alter table dirty.hesapc
-drop column opdate_17
-alter table dirty.hesapc
-drop column opdate_19
-alter table dirty.hesapc
-drop column opdate_20
-alter table dirty.hesapc
-drop column opdate_21
-alter table dirty.hesapc
-drop column opdate_22
-alter table dirty.hesapc
-drop column opdate_23
-alter table dirty.hesapc
-drop column opdate_24
-alter table dirty.hesapc
-drop column operstat
-alter table dirty.hesapc
-drop column opertn_count
-alter table dirty.hesapc
-drop column diag_count
-alter table dirty.hesapc
-drop column posopdur
-alter table dirty.hesapc
-drop column preopdur
-alter table dirty.hesapc
-drop column intmanig
-alter table dirty.hesapc
-drop column mainspef
-alter table dirty.hesapc
-drop column tretspef
-alter table dirty.hesapc
-drop column disdate
-alter table dirty.hesapc
-drop column disdest
-alter table dirty.hesapc
-drop column dismeth
-alter table dirty.hesapc
-drop column lsoa11
-alter table dirty.hesapc
-drop column sitetret
-alter table dirty.hesapc
-drop column pcfound
-alter table dirty.hesapc
-drop column speldur
-alter table dirty.hesapc
+create proc clean_data as
+BEGIN
+  alter table dirty.hesapc
+  alter column epiend date
+  alter table dirty.hesapc
+  alter column epistart date
+  alter table dirty.hesapc
+  alter column dob date
+  alter table dirty.hesapc
+  alter column admidate date
+  alter table dirty.hesapc
+  alter column elecdate date
+  --dropping null columns
+  alter table dirty.hesapc
+  drop  column opdate_05
+  alter table dirty.hesapc
+  drop column provspno
+  alter table dirty.hesapc
+  drop column admiflag
+  alter table dirty.hesapc
+  drop column disflag
+  alter table dirty.hesapc
+  drop column postdist
+  alter table dirty.hesapc
+  drop column pseudo_hesid
+  alter table dirty.hesapc
+  drop column startage_calc
+  alter table dirty.hesapc
+  drop column consult
+  alter table dirty.hesapc
+  drop column pconsult
+  alter table dirty.hesapc
+  drop column preferrer
+  alter table dirty.hesapc
+  drop column preggmp
+  alter table dirty.hesapc
+  drop column referorg
+  alter table dirty.hesapc
+  drop column referrer
+  alter table dirty.hesapc
+  drop column reggmp
+  alter table dirty.hesapc
+  drop column fceflag
+  alter table dirty.hesapc
+  drop column elecdurd
+  alter table dirty.hesapc
+  drop column firstreg
+  alter table dirty.hesapc
+  drop column cause
+  alter table dirty.hesapc
+  drop column diag_02
+  alter table dirty.hesapc
+  drop column diag_03
+  alter table dirty.hesapc
+  drop column diag_04
+  alter table dirty.hesapc
+  drop column diag_05
+  alter table dirty.hesapc
+  drop column diag_06
+  alter table dirty.hesapc
+  drop column diag_07
+  alter table dirty.hesapc
+  drop column diag_08
+  alter table dirty.hesapc
+  drop column diag_09
+  alter table dirty.hesapc
+  drop column diag_10
+  alter table dirty.hesapc
+  drop column diag_11
+  alter table dirty.hesapc
+  drop column diag_12
+  alter table dirty.hesapc
+  drop column diag_13
+  alter table dirty.hesapc
+  drop column diag_14
+  alter table dirty.hesapc
+  drop column diag_15
+  alter table dirty.hesapc
+  drop column diag_16
+  alter table dirty.hesapc
+  drop column diag_17
+  alter table dirty.hesapc
+  drop column diag_18
+  alter table dirty.hesapc
+  drop column diag_19
+  alter table dirty.hesapc
+  drop column diag_20
+  alter table dirty.hesapc
+  drop column opertn_01
+  alter table dirty.hesapc
+  drop column opertn_02
+  alter table dirty.hesapc
+  drop column opertn_03
+  alter table dirty.hesapc
+  drop column opertn_04
+  alter table dirty.hesapc
+  drop column opertn_05
+  alter table dirty.hesapc
+  drop column opertn_06
+  alter table dirty.hesapc
+  drop column opertn_07
+  alter table dirty.hesapc
+  drop column opertn_08
+  alter table dirty.hesapc
+  drop column opertn_09
+  alter table dirty.hesapc
+  drop column opertn_10
+  alter table dirty.hesapc
+  drop column opertn_11
+  alter table dirty.hesapc
+  drop column opertn_12
+  alter table dirty.hesapc
+  drop column opertn_13
+  alter table dirty.hesapc
+  drop column opertn_14
+  alter table dirty.hesapc
+  drop column opertn_15
+  alter table dirty.hesapc
+  drop column opertn_16
+  alter table dirty.hesapc
+  drop column opertn_17
+  alter table dirty.hesapc
+  drop column opertn_19
+  alter table dirty.hesapc
+  drop column opertn_20
+  alter table dirty.hesapc
+  drop column opertn_21
+  alter table dirty.hesapc
+  drop column opertn_22
+  alter table dirty.hesapc
+  drop column opertn_23
+  alter table dirty.hesapc
+  drop column opertn_24
+  alter table dirty.hesapc
+  drop column opdate_01
+  alter table dirty.hesapc
+  drop column opdate_02
+  alter table dirty.hesapc
+  drop column opdate_03
+  alter table dirty.hesapc
+  drop column opdate_04
+  alter table dirty.hesapc
+  drop column opdate_06
+  alter table dirty.hesapc
+  drop column opdate_07
+  alter table dirty.hesapc
+  drop column opdate_08
+  alter table dirty.hesapc
+  drop column opdate_09
+  alter table dirty.hesapc
+  drop column opdate_10
+  alter table dirty.hesapc
+  drop column opdate_11
+  alter table dirty.hesapc
+  drop column opdate_12
+  alter table dirty.hesapc
+  drop column opdate_13
+  alter table dirty.hesapc
+  drop column opdate_14
+  alter table dirty.hesapc
+  drop column opdate_15
+  alter table dirty.hesapc
+  drop column opdate_16
+  alter table dirty.hesapc
+  drop column opdate_17
+  alter table dirty.hesapc
+  drop column opdate_19
+  alter table dirty.hesapc
+  drop column opdate_20
+  alter table dirty.hesapc
+  drop column opdate_21
+  alter table dirty.hesapc
+  drop column opdate_22
+  alter table dirty.hesapc
+  drop column opdate_23
+  alter table dirty.hesapc
+  drop column opdate_24
+  alter table dirty.hesapc
+  drop column operstat
+  alter table dirty.hesapc
+  drop column opertn_count
+  alter table dirty.hesapc
+  drop column diag_count
+  alter table dirty.hesapc
+  drop column posopdur
+  alter table dirty.hesapc
+  drop column preopdur
+  alter table dirty.hesapc
+  drop column intmanig
+  alter table dirty.hesapc
+  drop column mainspef
+  alter table dirty.hesapc
+  drop column tretspef
+  alter table dirty.hesapc
+  drop column disdate
+  alter table dirty.hesapc
+  drop column disdest
+  alter table dirty.hesapc
+  drop column dismeth
+  alter table dirty.hesapc
+  drop column lsoa11
+  alter table dirty.hesapc
+  drop column sitetret
+  alter table dirty.hesapc
+  drop column pcfound
+  alter table dirty.hesapc
+  drop column speldur
+  alter table dirty.hesapc
+END
