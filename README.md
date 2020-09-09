@@ -13,9 +13,14 @@ Repository for all material produced by Team Pi during Kubrick Group Data Engine
 
 ## Modelling approach 
 
+### Cleaning the data 
+
+We removed all null columns and altered data types. 
+([see code here](https://github.com/LaurenSwan16/TeamPi---HES-Project/blob/master/Cleaning%20null%20columns%20and%20altering%20column%20types.txt)
+
 Our fact table relvoves around the instance of a patient in hospital, and uses the dimensions to fully describe this instance. 
 
-![alt text](https://github.com/LaurenSwan16/TeamPi---HES-Project/blob/master/Screen%20Shot%202020-09-04%20at%2015.04.17.png "ERD") 
+![alt text](https://github.com/LaurenSwan16/TeamPi---HES-Project/blob/master/FullERD.png "ERD") 
 
 These attributes were determined to be facts:
 - EPIDUR
@@ -25,7 +30,7 @@ These attributes were determined to be facts:
 - ELECDURCALC
 - NEWNHSNO_CHECK
 
-Dimensions were created for all the other attributes and are described below:
+Dimensions were created ([see code here](https://github.com/LaurenSwan16/TeamPi---HES-Project/blob/master/Dimension%20creation%20code%20-%20Hospital%20project%20-%20Team%20Pi.sql)) for all the other attributes and are described below:
 
 - Dim_diagnosis 
   + This dimension provides a description of the diagnosis based on diagnosis code
@@ -53,16 +58,17 @@ This is completed using stored procedures.
 When adding new data to this database first upload data to dirty.HESAPC
 
 Run Stored proc:
-					SP_Insert_into_HESAPC 
+					[SP_Insert_into_HESAPC](https://github.com/LaurenSwan16/TeamPi---HES-Project/blob/master/SP%20for%20incremental%20loading%20of%20staged%20data.sql) 
 
 	- This uploads all new data into the staging area. 
 
-Then run the overall proc:
-						SP_fact_insert
+## Updating the dimensions and fact table 
+		Run the overall proc
+						[SP_fact_insert](https://github.com/LaurenSwan16/TeamPi---HES-Project/blob/master/SP_fact_insert.sql)
 
 	This completes the following: 
 
-       Runs the following stored procs to update dimensions:  
+       Runs the following stored procs to update dimensions ([see code here](https://github.com/LaurenSwan16/TeamPi---HES-Project/blob/master/SP%20for%20updating%20ALL%20dimensions.sql)):  
        -- These dimensions have been determined as SCD type 2, as opposed to others which are fixed.
 							SP_dimsex_update
 							SP_dimpractice_update
