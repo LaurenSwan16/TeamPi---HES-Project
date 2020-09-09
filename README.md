@@ -70,7 +70,7 @@ Run the overall proc
 This completes the following: 
 
 Runs the following stored procs to update dimensions ([see code here](https://github.com/LaurenSwan16/TeamPi---HES-Project/blob/master/SP%20for%20updating%20ALL%20dimensions.sql)):  
-       -- These dimensions have been determined as SCD type 2, as opposed to others which are fixed.
+       	These dimensions have been determined as SCD type 2, as opposed to others which are fixed.
 							SP_dimsex_update
 							SP_dimpractice_update
 							SP_dimpostcode_update
